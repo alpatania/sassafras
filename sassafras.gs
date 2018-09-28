@@ -1,4 +1,4 @@
-var SEARCH_QUERY = "label:i.s.i.-foundation-scholar-articles is:unread";
+var SEARCH_QUERY = "label:scholar-articles is:unread"; //  CHANGE THIS TO YOUR OWN SCHOLAR ALERTS SEARCH QUERY
  
 // Modified version of the code from: https://gist.github.com/oshliaer/70e04a67f1f5fd96a708
 // To work with Google Scholar Alerts
