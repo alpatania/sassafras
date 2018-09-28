@@ -4,8 +4,8 @@ A simple automatic scholar sorter appropriate for researchers and scientists (cr
 This is a small script that looks for **unread Google Scholar Alerts** emails in your Gmail account and saves each paper in a Google Spreadsheet as:
 Title/ Authors - Journal/ Google Scholar link/ GoogleScholar Alert/ number of Alerts that contained the paper
 
-![Gmail alerts](/images/gmail_GSalerts.png)
-![Google sheet](/images/gsheet_GSalerts.png)
+![Gmail alerts](gmail_GSalerts.png)
+![Google sheet](gsheet_GSalerts.png)
 
 # How to run it:
 1. Open a new Google Sheet
