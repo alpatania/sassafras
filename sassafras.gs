@@ -40,7 +40,7 @@ function getEmails_(q) {
          }
          
         }
-        msgs.markRead() // the message is marked as read so it will not pop up again
+    threads[i].markRead() // the thread is marked as read so it will not pop up again
     }
     return emails;
 }
