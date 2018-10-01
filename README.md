@@ -18,4 +18,4 @@ Title/ Authors - Journal/ Google Scholar link/ GoogleScholar Alert/ number of Al
 ## The possibilities are endless
 I personally have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
 
-Take a look at the available functions for ![GoogleSheets](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app) and ![Gmail](https://developers.google.com/apps-script/reference/gmail/gmail-app).
+Take a look at the available functions for ![GoogleSheets](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app) and ![Gmail](https://developers.google.com/apps-script/reference/gmail/gmail-app) to customize your own script.
