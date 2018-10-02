@@ -37,12 +37,12 @@ function getEmails_(q) {
               }
               paper.push(subject); //after the title and author the Google Scholar Alert search query is added to the paper info being saved
              // HOTFIX - not tested
-              if (paper.length < 5) {
-                for (var fix = 0; fix < 5-paper.length; fix++) {
+              if (paper.length < 4) {
+                for (var fix = 0; fix < 4-paper.length; fix++) {
                   paper.push('something went wrong here')
                 }
                 } else {
-                paper = paper.slice(0,5)
+                paper = paper.slice(0,4)
                 }
                // END HOTFIX 
              emails.push(paper); // the paper is added to the list
