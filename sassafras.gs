@@ -10,7 +10,8 @@ function getEmails_(q) {
         var msgs = threads[i].getMessages();
         for (var j in msgs) {
             var listpapers = msgs[j].getPlainBody().split(/\r?\n\n/)[0]; // separates Google Scholar signature from the body
-            var subject = msgs[j].getSubject(); // gets the Google Scholar Alert search query
+            //var subject = msgs[j].getSubject(); // gets the Google Scholar Alert search query
+            var date = msgs[j].getDate(); // gets the email date
             listpapers = listpapers.replace(/(\[image: Google\+\]).*?(>\n)/g,'newpaper\n'); //creates a signal for recognizing a new paper
             var papers = listpapers.split(/\r?newpaper\n/); // creates an array with the text describing each paper
             var numpapers = papers.length;
@@ -35,7 +36,7 @@ function getEmails_(q) {
                   continue
                 }
               }
-              paper.push(subject); //after the title and author the Google Scholar Alert search query is added to the paper info being saved
+             paper.push(date); //paper.push(subject); //after the title and author the Google Scholar Alert search query is added to the paper info being saved
              // HOTFIX - not tested
               if (paper.length < 4) {
                 for (var fix = 0; fix < 4-paper.length; fix++) {
@@ -57,6 +58,12 @@ function getEmails_(q) {
 function appendData_(sheet, array2d) {
   sheet.getRange(sheet.getLastRow() + 1, 1, array2d.length, array2d[0].length).setValues(array2d);
 }
+// Adding a line with time stamp before the new update
+// function appendData_(sheet, array2d) {
+//   var today = new Date();
+//   sheet.getRange(sheet.getLastRow() + 1, 1).setValue(today);
+//   sheet.getRange(sheet.getLastRow() + 1, 1, array2d.length, array2d[0].length).setValues(array2d);
+// }
 
 function Comparator_(a, b) {
    return a[0].localeCompare(b[0]);
