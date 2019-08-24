@@ -21,6 +21,9 @@ Then save the information in a GoogleSheet
 3. Copy paste the .gs file
 4. Change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts *(the script will automatically mark them as read after saving them)*
 5. Run the **save_email** function
+---
+6. OPTIONAL: substitute your email address in the `summary.gs` if you want to run the new feature.
+5. Run the **send_email** function
 
 ## The possibilities are endless
 I personally have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
