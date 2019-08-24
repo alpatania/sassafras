@@ -7,6 +7,7 @@ Title/ Authors - Journal/ Google Scholar link/ ~~GoogleScholar Alert~~ Date/ num
 *notice: an older version had a search query column now substituted with the email time-stamp.*
 ![Gmail alerts](gmail_GSalerts.png)
 ![Google sheet](gsheet_GSalerts.png)
+![Gmail summary](gmail_IB_GSalerts.png)
 
 ## How to run it:
 1. Open a new Google Sheet
