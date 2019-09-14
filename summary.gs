@@ -7,7 +7,7 @@ function send_email() {
   var firstRow = ts.getRange(1, 1, 1, 5).getValues(); // Get values of first row to add later
   var emailAddress = 'your.email@gmail.com';
   
-  var subject = 'Sassafrass Summary - ';
+  var subject = 'Sassafras Summary - ';
   var message = "";
   var data = emailRange.getValues();
   for (var i = 0; i < data.length; ++i) {
