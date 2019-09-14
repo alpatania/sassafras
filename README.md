@@ -22,8 +22,11 @@ Then save the information in a GoogleSheet
 4. Change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts *(the script will automatically mark them as read after saving them)*
 5. Run the **save_email** function
 ---
-6. OPTIONAL: substitute your email address in the `summary.gs` if you want to run the new feature.
+6. OPTIONAL: substitute your email address in the **send_email** function in `summary.gs` if you want an email summary of the top 10 papers of the week.
 5. Run the **send_email** function
+---
+6. OPTIONAL: substitute the keywords and sheets names in the **run_labels** function in `cleaning.gs` if you need to clean your list.
+5. Run the **run_labels** function
 
 ## The possibilities are endless
 I personally have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
