@@ -30,7 +30,10 @@ function getEmails_(q) {
                 var line = lines[l];
                 if (line.indexOf('<') == 0) { // the first line to contain a hyperlink is the link to the article
                   paper.push(lines[l+1]); // the line right after is the list of authors
-                  paper.push(line.replace('<','').replace('>',''));
+                  var scholar_url = line.replace('<','').replace('>','');
+                  scholar_url = scholar_url.replace(/http:\/\/scholar\.google\.(com|it)\/scholar_url\?url=/g,'');
+                  var url = scholar_url.split('&');
+                  paper.push(url[0]);
                   break;
                 } else {
                   continue
@@ -71,8 +74,19 @@ function Comparator_(a, b) {
  
 function saveEmails() {
     var array2d = getEmails_(SEARCH_QUERY);//creates variable with the output of getEmails_
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet_Papers = ss.getSheetByName('Papers'); //source sheet
+    var sheet_Preprints = ss.getSheetByName('PrePrints'); //source sheet
+    if (!sheet_Papers) {
+     ss.insertSheet('Papers');
+    }
+    if (!sheet_Preprints) {
+     ss.insertSheet('PrePrints');
+    }
+ 
     if (array2d) {//if the variable is not empty deletes repetitions and counts them
-      var newData = [];
+      var newPapers = [];
+      var newPreprints = [];
       array2d = array2d.sort(Comparator_);
       var paperold = array2d[0];
       var countpaperold = 0;
@@ -82,11 +96,16 @@ function saveEmails() {
              countpaperold = countpaperold+1;
           } else {
              paperold.push(countpaperold);
-             newData.push(paperold);
+             if (paperold[2].match(/(bio|a)rxiv\.org/g)){
+               newPreprints.push(paperold);
+             } else {
+               newPapers.push(paperold);
+             }
              var paperold = paper;
              var countpaperold = 1;
           }
        }
-      appendData_(SpreadsheetApp.getActiveSheet(), newData);//runs appendData_ to the active spreadsheet - BUG: this does not seem to work if there is more than one Sheet in the Spreadsheet. Why?
+      appendData_(sheet_Papers, newPapers);//runs appendData_ to the active spreadsheet
+      appendData_(sheet_Preprints, newPreprints);//runs appendData_ to the active spreadsheet
     }
 }
