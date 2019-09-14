@@ -9,7 +9,7 @@ This is a small script that looks for **unread Google Scholar Alerts** emails in
 The script reads the unread Google Scholar Alerts emails
 ![Gmail alerts](gmail_GSalerts.png)
 
-Then save the information in a GoogleSheet
+Then saves the article's information in a GoogleSheet
 ![Google sheet](gsheet_GSalerts.png)
 
 **UPDATE:** Right now it is optional, but the google script can send an email of the top 10 papers ordered by number of occurances.
