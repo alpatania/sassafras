@@ -10,10 +10,10 @@ The script reads the unread Google Scholar Alerts emails
 ![Gmail alerts](gmail_GSalerts.png)
 
 Then saves the article's information in a GoogleSheet
-![Google sheet](gsheet_GSalerts.png)
+![Google sheet](sassafras_2.png)
 
 **UPDATE:** Right now it is optional, but the google script can send an email of the top 10 papers ordered by number of occurances.
-![Gmail summary](gmail_IB_GSalerts.png)
+![Gmail summary](sassafras_3.png)
 
 ## How to run it:
 1. Open a new Google Sheet
