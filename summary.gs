@@ -1,4 +1,4 @@
-var del_past = true;
+var del_past = true; // Deletes entire list of papers
 
 function create_email() {
   var ts = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Papers");
