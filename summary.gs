@@ -1,14 +1,18 @@
-function send_email() {
-  var ts = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+var del_past = true;
+
+function create_email() {
+  var ts = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Papers");
+  var ts_preprint = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("PrePrints");
   var range = ts.getDataRange()
   range.sort({column: 5, ascending: false}) // Order spreadsheet according to column 5 (Relevance) 
   // Write email
   var emailRange = ts.getRange(2, 1, 10, 5); // Get values to create email body (StartRow, StartColumns, numRows, numCols)
   var firstRow = ts.getRange(1, 1, 1, 5).getValues(); // Get values of first row to add later
-  var emailAddress = 'your.email@gmail.com';
+  var emailAddress = 'alice.patania@gmail.com';//'your.email@gmail.com';
   
   var subject = 'Sassafras Summary - ';
   var message = "";
+  message += "There were " + ts.getLastRow() + " new papers published this week and " + ts_preprint.getLastRow() + " new preprints. <br>Here are the top 10 published papers: <br><br>";
   var data = emailRange.getValues();
   for (var i = 0; i < data.length; ++i) {
     var row = data[i];
@@ -25,6 +29,8 @@ function send_email() {
   var options = {};
     options.htmlBody = message;
   MailApp.sendEmail(emailAddress, subject, '', options);
-  ts.clearContents(); // Clean spreadsheet
+  if (del_past) {
+    ts.clearContents(); // Clean spreadsheet
+    }
   ts.getRange(1, 1, 1, 5).setValues(firstRow);
 }
