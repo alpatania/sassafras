@@ -3,7 +3,8 @@ var del_emails = false; // Deletes the Google Scholar email as it reads their co
 var send_summary = false; // Sends and email summary of the current top 10 papers in your 
 var date_not_query = true; // Adds the date of the email instead of the subject of the google alert
 var date_separator = false; // Adds a separator before writing the new papers' list in the GoogleSheet
- 
+var del_past = false; // Deletes past list of papers before adding the new one
+
 // Modified version of the code from: https://gist.github.com/oshliaer/70e04a67f1f5fd96a708
 // To work with Google Scholar Alerts
 
@@ -73,6 +74,11 @@ function getEmails_(q) {
     return emails;
 }
 function appendData_(sheet, array2d) {
+ if (del_past) {
+  var firstRow = sheet.getRange(1, 1, 1, 5).getValues(); // Get values of first row to add later
+  sheet.clearContents(); // Clean spreadsheet
+  sheet.getRange(1, 1, 1, 5).setValues(firstRow);
+    }
  if (date_separator) { //Adding a line with today's time stamp before the new update
   var today = new Date();
   sheet.getRange(sheet.getLastRow() + 1, 1).setValue(today);
