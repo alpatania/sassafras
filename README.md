@@ -6,14 +6,16 @@ This is a small script that looks for **unread Google Scholar Alerts** emails in
   Title/ Authors - Journal/ Google Scholar link/Date/ number of Alerts that contained the paper<br>
   *notice: an older version had a search query column now substituted with the email time-stamp.*
   
+
+  
 The script reads the unread Google Scholar Alerts emails
 ![Gmail alerts](gmail_GSalerts.png)
 
 Then saves the article's information in a GoogleSheet
-![Google sheet](sassafras_2.png)
+![Google sheet](gsheet_GSalerts.png)
 
 **UPDATE:** Right now it is optional, but the google script can send an email of the top 10 papers ordered by number of occurances.
-![Gmail summary](sassafras_3.png)
+![Gmail summary](sampleemail_GSalerts.png)
 
 ## How to run it:
 1. Open a new Google Sheet
