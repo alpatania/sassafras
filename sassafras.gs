@@ -133,5 +133,5 @@ function saveEmails() {
     
     // After all is said and done send a summary email
     if (send_summary) {
-    create_email();}
+      create_email_(newPapers, newPreprints);}
 }
