@@ -17,7 +17,7 @@ function create_email_(range, range_preprints) {
   var today = new Date();
   var subject = 'Sassafras Summary - ' + today;
   var message = "";
-  message += "There were " + range.length + "(" + ts.getLastRow() + ") new papers published this week and " + range_preprints.length + "(" + ts_preprint.getLastRow() + ") new preprints. <br>";
+  message += "There were " + range.length + " new papers published this week and " + range_preprints.length + " new preprints. <br>";
   message += "<br>--- Here are the top "+ Math.min(top_papers,range.length) +" published papers of the week: <br>";
   // Adding Top 5 published papers
   for (var i = 0; i < Math.min(top_papers,range.length); ++i) {
