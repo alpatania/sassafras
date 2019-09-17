@@ -22,10 +22,16 @@ Then saves the article's information in a GoogleSheet
 1. Open a new Google Sheet
 2. Go to **Tools > Script Editor**
 3. Copy paste the .gs file
-4. Change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts *(the script will automatically mark them as read after saving them)*
-5. Substitute your email address in the **send_email** function in `summary.gs`.
-
-6. Run the **send_email** function
+4. Add your information 
+  `sassafras.gs` : change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts (test run it on your Gmail)  
+  `summary.gs` : Change the your email address.
+5. Choose the options that best suit you in `sassafras.gs`, or keep the following defaults:
+  [] del_emails // if `true` deletes the Google Scholar email as it reads their content otherwise it just marks them as "read";  
+  [] send_summary // if `true` sends an email summary of the new top 10 papers added;  
+  [x] date_not_query // if `true` adds the date of the email in column 5, otherwise adds the subject of the GoogleAlert;
+  [] date_separator // if `true` adds a separator before writing the new papers' list in the GoogleSheet;
+  [] del_past // if `true` deletes past list of papers before adding the new one.
+6. Run the **save_email** function
 ---
 7. OPTIONAL: substitute the keywords and sheets names in the **run_labels** function in `cleaning.gs` if you need to clean/organize your list.
 8. Run the **run_labels** function
