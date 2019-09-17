@@ -27,7 +27,7 @@ Then saves the article's information in a GoogleSheet
   `summary.gs` : change the **emailAddress** variable to your Gmail address.
 5. Choose the options that best suit you in `sassafras.gs`, or keep the following defaults:
 
-  - [ ] del_emails // if `true` deletes the Google Scholar email as it reads their content otherwise it just marks them as "read";  
+  - [ ] del_emails // if `true` deletes the GoogleAlert emails as it reads their content otherwise it just marks them as "read";  
   - [ ] send_summary // if `true` sends an email summary of the new top 10 papers added;  
   - [x] date_not_query // if `true` adds the date of the email in column 5, otherwise adds the subject of the GoogleAlert;
   - [ ] date_separator // if `true` adds a separator before writing the new papers' list in the GoogleSheet;
