@@ -14,7 +14,8 @@ The script reads the unread Google Scholar Alerts emails
 Then saves the article's information in a GoogleSheet
 ![Google sheet](gsheet_GSalerts.png)
 
-**UPDATE:** Right now it is optional, but the google script can send an email of the top 10 papers ordered by number of occurances.
+**UPDATE:** It is optional, but the script can automatically send an email of the top papers being added 
+(defaults: 5 published and 5 pre-prints) ordered by number of occurances.
 ![Gmail summary](sampleemail_GSalerts.png)
 
 ## How to run it:
@@ -22,13 +23,12 @@ Then saves the article's information in a GoogleSheet
 2. Go to **Tools > Script Editor**
 3. Copy paste the .gs file
 4. Change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts *(the script will automatically mark them as read after saving them)*
-5. Run the **save_email** function
+5. Substitute your email address in the **send_email** function in `summary.gs`.
+
+6. Run the **send_email** function
 ---
-6. OPTIONAL: substitute your email address in the **send_email** function in `summary.gs` if you want an email summary of the top 10 papers of the week.
-5. Run the **send_email** function
----
-6. OPTIONAL: substitute the keywords and sheets names in the **run_labels** function in `cleaning.gs` if you need to clean your list.
-5. Run the **run_labels** function
+7. OPTIONAL: substitute the keywords and sheets names in the **run_labels** function in `cleaning.gs` if you need to clean/organize your list.
+8. Run the **run_labels** function
 
 ## The possibilities are endless
 Personally, I have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
