@@ -1,5 +1,6 @@
-var top_papers = 5;
-var top_preprints = 5;
+var top_papers = 5; // number of papers in summary
+var top_preprints = 5; // number of preprints in summary
+var emailAddress = 'your.email@gmail.com';
 
 function create_email_(range, range_preprints) {
   var ts = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Papers");
@@ -13,7 +14,6 @@ function create_email_(range, range_preprints) {
     });
   
   // Write email
-  var emailAddress = 'your.email@gmail.com';
   var today = new Date();
   var subject = 'Sassafras Summary - ' + today;
   var message = "";
