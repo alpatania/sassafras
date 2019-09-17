@@ -22,9 +22,9 @@ Then saves the article's information in a GoogleSheet
 1. Open a new Google Sheet
 2. Go to **Tools > Script Editor**
 3. Copy paste the .gs file
-4. Add your information 
+4. Add your information  
   `sassafras.gs` : change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts (test run it on your Gmail)  
-  `summary.gs` : Change the your email address.
+  `summary.gs` : change the **emailAddress** variable to your Gmail address.
 5. Choose the options that best suit you in `sassafras.gs`, or keep the following defaults:
   [] del_emails // if `true` deletes the Google Scholar email as it reads their content otherwise it just marks them as "read";  
   [] send_summary // if `true` sends an email summary of the new top 10 papers added;  
