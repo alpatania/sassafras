@@ -14,11 +14,10 @@ function getEmails_(q) {
     for (var i in threads) {
         var msgs = threads[i].getMessages();
         for (var j in msgs) {
-            var listpapers = msgs[j].getPlainBody().split(/\r?\n\n/)[0]; // separates Google Scholar signature from the body
+            var listpapers = msgs[j].getPlainBody().split(/\n\n \n/)[0]; // separates Google Scholar signature from the body
             var subject = msgs[j].getSubject(); // gets the Google Scholar Alert search query
             var date = msgs[j].getDate(); // gets the email date
-            listpapers = listpapers.replace(/(\[image: Google\+\]).*?(>\n)/g,'newpaper\n'); //creates a signal for recognizing a new paper
-            var papers = listpapers.split(/\r?newpaper\n/); // creates an array with the text describing each paper
+            var papers = listpapers.split(/\r?\n\n/); // creates an array with the text describing each paper
             var numpapers = papers.length;
             for (var k = 0; k < numpapers; k++) {
               var title = papers[k].split('<')[0];// the title is everything before the link to google scholar
