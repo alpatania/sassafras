@@ -1,5 +1,5 @@
+<img align="right" src="sassafras_logo.png" width="150">
 # S.A.S.S.A.F.R.A.S. 
-<img align="right" src="sassafras_logo.png" width="100">
 Simple Automatic Scholar Sorter Appropriate For Researchers And Scientists (credit for the awesome acronym goes to [Thomas Varley](https://github.com/ThosV))
 
 This is a small script that looks for **unread Google Scholar Alerts** emails in your Gmail account and saves each paper in a Google Spreadsheet as:
