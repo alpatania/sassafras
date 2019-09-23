@@ -1,4 +1,4 @@
-var SEARCH_QUERY = "label:i.s.i.-foundation-scholar-articles is:unread";
+var SEARCH_QUERY = "label:scholar-articles is:unread"; //  CHANGE THIS TO YOUR OWN SCHOLAR ALERTS SEARCH QUERY
 var del_emails = false; // Deletes the Google Scholar email as it reads their content otherwise it just marks them as "read"
 var send_summary = true; // Sends and email summary of the current top 10 papers in your 
 var date_not_query = true; // Adds the date of the email instead of the subject of the google alert
