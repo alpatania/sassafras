@@ -56,3 +56,43 @@ function run_labels(){
   }
   
 }
+
+// custom menu function
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('Custom Menu')
+      .addItem('Save Data','saveEmails')
+      .addItem('Reorganize Papers','run_labels')
+      .addItem('Tag Pre-prints','run_tags')
+      .addToUi();
+}
+
+function tagging_(sheet_name, rx){
+
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName('Preprints'); //source sheet
+  var testrange = sheet.getRange('A:A' );//range to check
+  var testvalue = testrange.getValues();
+  
+  var csh = ss.getSheetByName(sheet_name); //destination sheet
+
+  //Condition check in A:A; If true copy the same row to data array
+  for (i=1; i<testvalue.length;i++) {
+  var teststring = testvalue[i];
+    if ( teststring[0].match(rx) ) {
+    var cell = sheet.getRange(i+1,6);
+    if (cell.isBlank()) {
+        cell.setValue(sheet_name);
+    }
+   }
+ }
+}
+
+function run_tags(){
+  for (r=0; r<labels.length; r++) {
+    var rx = labels[r][0];
+    var sheetname = labels[r][1];
+    tagging_(sheetname, rx);
+  }
+  
+}
