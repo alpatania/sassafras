@@ -1,4 +1,4 @@
-<img align="right" src="sassafras.png" width="150">
+# SASSAFRAS <img align="right" src="sassafras.png" width="150">
 
 Simple Automatic Scholar Sorter Appropriate For Researchers And Scientists (credit for the awesome acronym goes to [Thomas Varley](https://github.com/ThosV))
 
