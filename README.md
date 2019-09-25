@@ -15,7 +15,7 @@ The script reads the unread Google Scholar Alerts emails
 Then saves the article's information in a GoogleSheet
 ![Google sheet](gsheet_GSalerts.png)
 
-**UPDATE:** It is optional, but the script can automatically send an email of the top papers being added 
+The script can also automatically send an email of the top papers being added 
 (defaults: 5 published and 5 pre-prints) ordered by number of occurances.
 ![Gmail summary](sampleemail_GSalerts.png)
 
