@@ -5,6 +5,17 @@ var labels = [
   [/thisisyourRegEx4/ig, 'Sheet_name4']
   ];
 
+// ------ custom menu function
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('Sassafras Menu')
+      .addItem('Save Data','saveEmails')
+      .addItem('Reorganize Papers','run_labels')
+      .addItem('Tag Pre-prints','run_tags')
+      .addToUi();
+}
+
+// ------ Moving articles in Papers Sheet to labeled Sheets
 
 function labeling_(sheet_name, rx){
 
@@ -57,15 +68,7 @@ function run_labels(){
   
 }
 
-// custom menu function
-function onOpen() {
-  var ui = SpreadsheetApp.getUi();
-  ui.createMenu('Custom Menu')
-      .addItem('Save Data','saveEmails')
-      .addItem('Reorganize Papers','run_labels')
-      .addItem('Tag Pre-prints','run_tags')
-      .addToUi();
-}
+// ------ Tagging PrePrints Sheet in a new column
 
 function tagging_(sheet_name, rx){
 
