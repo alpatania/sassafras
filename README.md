@@ -38,6 +38,18 @@ The script can also automatically send an email of the top papers being added
 7. OPTIONAL: substitute the keywords and sheets names in the **run_labels** function in `cleaning.gs` if you need to clean/organize your list.
 8. Run the **run_labels** function
 
+## How to run the script automatically every week
+In Google Scripts go to **Edit > Current project's triggers**  
+It will open a new page saying **No results - Try adjusting your filter criteria or create a new trigger**  
+Click on **create a new trigger**  
+
+  Choose to run the function **saveEmails**  
+  deployment **Head**  
+  Select Event source **Time-driven**  
+  Type of time based trigger **Week timer**  
+  Select day and time you want the code to run at every week
+
+
 ## The possibilities are endless
 Personally, I have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
 
