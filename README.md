@@ -18,7 +18,7 @@ The script reads the unread Google Scholar Alerts emails
 ![Gmail alerts](img_/gmail_GSalerts.png)
 
 Then saves the article's information in a SpreadSheet separating published articles (in Papers) and pre-prints in (PrePrints)
-![Google sheet](img_/gsheet_GSalerts.png)
+![Google sheet](img_/sheet_GSalerts.png)
 
 The script can also automatically send an email of the top papers being added 
 (defaults: 5 published and 5 pre-prints) ordered by number of occurances.
@@ -46,6 +46,7 @@ The script can also automatically send an email of the top papers being added
 ## The custom menu
 The `options.gs` script has a function that will add a custom menu with selected sassafras functions to your SpreadSheet to make it easier to run.  
 To make it work the script just need to be saved in your script editor, and refresh the page of your SpreadSheet.
+![Custom menu](img_/menu_GSalerts.png)
 
 ## How to run the script automatically every week
 1. In Google Scripts go to **Edit > Current project's triggers**  
