@@ -48,12 +48,12 @@ The `options.gs` script has a function that will add a custom menu with selected
 To make it work the script just need to be saved in your script editor, and refresh the page of your SpreadSheet.
 
 ## How to run the script automatically every week
-In Google Scripts go to **Edit > Current project's triggers**  
-It will open a new page saying **No results - Try adjusting your filter criteria or create a new trigger**  
-Click on **create a new trigger**  
+1. In Google Scripts go to **Edit > Current project's triggers**  
+2. It will open a new page saying **No results - Try adjusting your filter criteria or create a new trigger**  
+3. Click on **create a new trigger**  
 
-  Choose to run the function **saveEmails**  
-  deployment **Head**  
-  Select Event source **Time-driven**  
-  Type of time based trigger **Week timer**  
-  Select day and time you want the code to run at every week
+  - Choose to run the function **saveEmails**  
+  - Deployment **Head**  
+  - Select Event source **Time-driven**  
+  - Type of time based trigger **Week timer**  
+  - Select day and time you want the code to run at every week
