@@ -5,14 +5,18 @@ Simple Automatic Scholar Sorter Appropriate For Researchers And Scientists (cred
 This is a small script that looks for **unread Google Scholar Alerts** emails in your Gmail account and saves each paper in a Google Spreadsheet as:
 
   Title/ Authors - Journal/ url of the paper/Date/ number of Alerts that contained the paper<br>
-  *notice: an older version had a search query column now substituted with the email time-stamp.*
+  *notice: an older version had a search query column now substituted with the email time-stamp, you can still access that option by chaging the `date_not_query` variable.*
   
+## The possibilities are endless
+Personally, I have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
 
+Take a look at the available functions for [GoogleSheets](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app) and [Gmail](https://developers.google.com/apps-script/reference/gmail/gmail-app) to customize your own script.
   
+## How does it work?
 The script reads the unread Google Scholar Alerts emails
 ![Gmail alerts](gmail_GSalerts.png)
 
-Then saves the article's information in a GoogleSheet
+Then saves the article's information in a SpreadSheet separating published articles (in Papers) and pre--prints in (PrePrints)
 ![Google sheet](gsheet_GSalerts.png)
 
 The script can also automatically send an email of the top papers being added 
@@ -20,7 +24,7 @@ The script can also automatically send an email of the top papers being added
 ![Gmail summary](sampleemail_GSalerts.png)
 
 ## How to run it:
-1. Open a new Google Sheet
+1. Open a new Google SpreadSheet
 2. Go to **Tools > Script Editor**
 3. Copy paste the .gs file
 4. Add your information  
@@ -48,9 +52,3 @@ Click on **create a new trigger**
   Select Event source **Time-driven**  
   Type of time based trigger **Week timer**  
   Select day and time you want the code to run at every week
-
-
-## The possibilities are endless
-Personally, I have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
-
-Take a look at the available functions for [GoogleSheets](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app) and [Gmail](https://developers.google.com/apps-script/reference/gmail/gmail-app) to customize your own script.
