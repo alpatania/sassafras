@@ -1,4 +1,4 @@
-# SASSAFRAS <img align="left" src="sassafras.png" width="150">
+# SASSAFRAS <img align="left" src="img_/sassafras.png" width="150">
 
 Simple Automatic Scholar Sorter Appropriate For Researchers And Scientists (credit for the awesome acronym goes to [Thomas Varley](https://github.com/ThosV))
 
@@ -14,33 +14,37 @@ Take a look at the available functions for [GoogleSheets](https://developers.goo
   
 ## How does it work?
 The script reads the unread Google Scholar Alerts emails
-![Gmail alerts](gmail_GSalerts.png)
+![Gmail alerts](img_/gmail_GSalerts.png)
 
-Then saves the article's information in a SpreadSheet separating published articles (in Papers) and pre--prints in (PrePrints)
-![Google sheet](gsheet_GSalerts.png)
+Then saves the article's information in a SpreadSheet separating published articles (in Papers) and pre-prints in (PrePrints)
+![Google sheet](img_/gsheet_GSalerts.png)
 
 The script can also automatically send an email of the top papers being added 
 (defaults: 5 published and 5 pre-prints) ordered by number of occurances.
-![Gmail summary](sampleemail_GSalerts.png)
+![Gmail summary](img_/sampleemail_GSalerts.png)
 
 ## How to run it:
 1. Open a new Google SpreadSheet
 2. Go to **Tools > Script Editor**
-3. Copy paste the .gs file
-4. Add your information  
+3. Copy paste the .gs files in the `code` folder.
+4. Customize the variable so they can work with your account   
   `sassafras.gs` : change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts (test run it on your Gmail)  
   `summary.gs` : change the **emailAddress** variable to your Gmail address.
 5. Choose the options that best suit you in `sassafras.gs`, or keep the following defaults:
 
-  - [ ] del_emails // if `true` deletes the GoogleAlert emails as it reads their content otherwise it just marks them as "read";  
-  - [x] send_summary // if `true` sends an email summary of the new top 10 papers added;  
-  - [x] date_not_query // if `true` adds the date of the email in column 5, otherwise adds the subject of the GoogleAlert;
-  - [ ] date_separator // if `true` adds a separator before writing the new papers' list in the GoogleSheet;
-  - [ ] del_past // if `true` deletes past list of papers before adding the new one.
-6. Run the **save_email** function
+  - [ ] **del_emails** // if `true` deletes the GoogleAlert emails as it reads their content otherwise it just marks them as "read";  
+  - [x] **send_summary** // if `true` sends an email summary of the new top 10 papers added;  
+  - [x] **date_not_query** // if `true` adds the date of the email in column 5, otherwise adds the subject of the GoogleAlert;
+  - [ ] **date_separator** // if `true` adds a separator before writing the new papers' list in the GoogleSheet;
+  - [ ] **del_past** // if `true` deletes past list of papers before adding the new one.
+6. Run the **save_email** function.
 ---
-7. OPTIONAL: substitute the keywords and sheets names in the **run_labels** function in `cleaning.gs` if you need to clean/organize your list.
-8. Run the **run_labels** function
+7. OPTIONAL: substitute the RegEx for keyword search and sheets names in the **labels** variables in `cleaning.gs` if you need to clean/organize your list.
+8. Run the **run_labels** function.
+
+## The custom menu
+The `options.gs` script has a function that will add a custom menu with selected sassafras functions to your SpreadSheet to make it easier to run.  
+To make it work the script just need to be saved in your script editor, and refresh the page of your SpreadSheet.
 
 ## How to run the script automatically every week
 In Google Scripts go to **Edit > Current project's triggers**  
