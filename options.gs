@@ -10,8 +10,8 @@ function onOpen() {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('Sassafras Menu')
       .addItem('Save Data','saveEmails')
-      .addItem('Reorganize Papers','run_labels')
-      .addItem('Tag Pre-prints','run_tags')
+      .addItem('Reorganize Papers','run_labels') // moves published papers in sheets according to keywords in var labels
+      .addItem('Tag Pre-prints','run_tags') // tags Pre-prints in a column acoording to keywords in var labels
       .addToUi();
 }
 
@@ -27,6 +27,9 @@ function labeling_(sheet_name, rx){
   var csh = ss.getSheetByName(sheet_name); //destination sheet
   if (!csh) {
          ss.insertSheet(sheet_name); // if the papers sheet does not exists it creates them
+         sheet_missing = ss.getSheetByName(sheet_name);
+         sheet_missing.appendRow(['Title','Authors - Journal', 'Link', 'Date', 'Count']);
+         sheet_missing.setFrozenRows(1);
         }
   var data = [];
   var j =[];
@@ -76,8 +79,6 @@ function tagging_(sheet_name, rx){
   var sheet = ss.getSheetByName('Preprints'); //source sheet
   var testrange = sheet.getRange('A:A' );//range to check
   var testvalue = testrange.getValues();
-  
-  var csh = ss.getSheetByName(sheet_name); //destination sheet
 
   //Condition check in A:A; If true copy the same row to data array
   for (i=1; i<testvalue.length;i++) {
