@@ -17,7 +17,7 @@ Take a look at the available functions for [GoogleSheets](https://developers.goo
 The script reads the unread Google Scholar Alerts emails
 ![Gmail alerts](img_/gmail_GSalerts.png)
 
-Then saves the article's information in a SpreadSheet separating published articles (in Papers) and pre-prints in (PrePrints)
+Then saves the article's information in a SpreadSheet separating published articles (in `Papers`) and pre-prints in (`PrePrints`)
 ![Google sheet](img_/sheet_GSalerts.png)
 
 The script can also automatically send an email of the top papers being added
