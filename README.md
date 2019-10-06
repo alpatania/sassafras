@@ -4,15 +4,15 @@ Simple Automatic Scholar Sorter Appropriate For Researchers And Scientists (cred
 
 This is a small script that looks for **unread Google Scholar Alerts** emails in your Gmail account and saves each paper in a Google Spreadsheet as:
 
-  Title/ Authors - Journal/ url of the paper/Date/ number of Alerts that contained the paper  
-  
-  *note: an older version had a search query column now substituted with the email time-stamp, you can still access that option by chaging the `date_not_query` variable.*
-  
+  Title/ Authors - Journal/ URL of the paper/Date/ number of Alerts that contained the paper  
+ 
+  *note: an older version had a search query column now substituted with the email time-stamp, you can still access that option by changing the `date_not_query` variable.*
+ 
 ### The possibilities are endless
-Personally, I have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
+Personally, I have an extra column with a `Data Validation` drop-down menu so i can mark the papers as I go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every Monday, or the day after your journal club to get new ideas!
 
 Take a look at the available functions for [GoogleSheets](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app) and [Gmail](https://developers.google.com/apps-script/reference/gmail/gmail-app) to customize your own script.
-  
+ 
 ## How does it work?
 The script reads the unread Google Scholar Alerts emails
 ![Gmail alerts](img_/gmail_GSalerts.png)
@@ -20,15 +20,15 @@ The script reads the unread Google Scholar Alerts emails
 Then saves the article's information in a SpreadSheet separating published articles (in Papers) and pre-prints in (PrePrints)
 ![Google sheet](img_/sheet_GSalerts.png)
 
-The script can also automatically send an email of the top papers being added 
-(defaults: 5 published and 5 pre-prints) ordered by number of occurances.
+The script can also automatically send an email of the top papers being added
+(defaults: 5 published and 5 pre-prints) ordered by the number of occurrences.
 ![Gmail summary](img_/sampleemail_GSalerts.png)
 
 ## How to run it:
 1. Open a new Google SpreadSheet
 2. Go to **Tools > Script Editor**
-3. Copy paste the .gs files in the `code` folder.
-4. Customize the variable so they can work with your account   
+3. Copy-paste the .gs files in the `code` folder.
+4. Customize the variable so they can work with your account  
   `sassafras.gs` : change the **SEARCH_QUERY** variable so that it can detect your unread Google Scholar Alerts (test run it on your Gmail)  
   `summary.gs` : change the **emailAddress** variable to your Gmail address.
 5. Choose the options that best suit you in `sassafras.gs`, or keep the following defaults:
