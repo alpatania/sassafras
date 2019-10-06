@@ -8,7 +8,7 @@ This is a small script that looks for **unread Google Scholar Alerts** emails in
   
   *note: an older version had a search query column now substituted with the email time-stamp, you can still access that option by chaging the `date_not_query` variable.*
   
-## The possibilities are endless
+### The possibilities are endless
 Personally, I have an extra column with a Data Validation drop down menu so i can mark the papers as i go through them. One can write a script that sends emails with the list of papers marked in a specific way, or the script can run automatically every monday, or the day after your journal club to get new ideas! 
 
 Take a look at the available functions for [GoogleSheets](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app) and [Gmail](https://developers.google.com/apps-script/reference/gmail/gmail-app) to customize your own script.
