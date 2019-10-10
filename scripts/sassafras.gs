@@ -28,39 +28,45 @@ function saveEmails(){
     Logger.log('-----Number of Scraped articles----');
     Logger.log(array2d.length);
     
-    if (array2d.length > 1) {//if the variable is not empty deletes repetitions and counts them
-      var newPapers = [];
-      var newPreprints = [];
-      array2d = array2d.sort(Comparator_); // sort the papers' list just created by title alphabetically
-      
-      var paperold = array2d[0]; // gets the first paper alphabetically
-      var countpaperold = 0; // counter of multiplicity of titles
-     
-      Logger.log('------Counting Duplicates----')
-      for (var i = 0; i < array2d.length; i++){ // Goes through the sorted list 
-          var paper = array2d[i];
-          if (paperold[0] === paper[0]){ // compares each paper title with the title at previous line - strict match char by char
-             countpaperold++; // if the title is already present increases the counter
-          } else {
+    var newPapers = [];
+    var newPreprints = [];
+    
+    if (array2d.length > 0) {//if the variable is not empty deletes repetitions and counts them
+    
+      if (array2d.length > 1) {
+        array2d = array2d.sort(Comparator_); // sort the papers' list just created by title alphabetically
+        
+        var paperold = array2d[0]; // gets the first paper alphabetically
+        var countpaperold = 0; // counter of multiplicity of titles
+       
+        Logger.log('------Counting Duplicates----')
+        for (var i = 0; i < array2d.length; i++){ // Goes through the sorted list 
+            var paper = array2d[i];
+            if (paperold[0] === paper[0]){ // compares each paper title with the title at previous line - strict match char by char
+               countpaperold++; // if the title is already present increases the counter
+            } else {
+               paperold.push(countpaperold); // if the title is not present appends the counter to the previous title's data
+               if (paperold[2].match(/(bio|a)rxiv\.org|preprint/g)){ // and adds the previous title with its counter to the correct sheet
+                 newPreprints.push(paperold); // preprints if the link is to ArXiv or Biorxiv
+               } else {
+                 newPapers.push(paperold); // papers otherwise
+               }
+               var paperold = paper; // Updates the title to be matched to the present one
+               var countpaperold = 1; // and resets the counter
+            }
+         } // closing the for loop
+         // Adding the last paper scraped
+         if (paperold[2].match(/(bio|a)rxiv\.org|preprint/g)){ // and adds the previous title with its counter to the correct sheet
              paperold.push(countpaperold); // if the title is not present appends the counter to the previous title's data
-             if (paperold[2].match(/(bio|a)rxiv\.org|preprint/g)){ // and adds the previous title with its counter to the correct sheet
-               newPreprints.push(paperold); // preprints if the link is to ArXiv or Biorxiv
-             } else {
-               newPapers.push(paperold); // papers otherwise
-             }
-             var paperold = paper; // Updates the title to be matched to the present one
-             var countpaperold = 1; // and resets the counter
-          }
-       } // closing the for loop
-       // Adding the last paper scraped
-       if (paperold[2].match(/(bio|a)rxiv\.org|preprint/g)){ // and adds the previous title with its counter to the correct sheet
-           paperold.push(countpaperold); // if the title is not present appends the counter to the previous title's data
-           newPreprints.push(paperold); // preprints if the link is to ArXiv or Biorxiv
-       }
-       } else {
-           paperold.push(countpaperold); // if the title is not present appends the counter to the previous title's data
-           newPapers.push(paperold); // papers otherwise
-       }
+             newPreprints.push(paperold); // preprints if the link is to ArXiv or Biorxiv
+         }
+         } else {
+             paperold.push(countpaperold); // if the title is not present appends the counter to the previous title's data
+             newPapers.push(paperold); // papers otherwise
+         }
+     } else {
+       Logger.log('No new papers this week');
+     }
              
       // Adding papers to SpreadSheet
       if (newPapers.length > 0) {
