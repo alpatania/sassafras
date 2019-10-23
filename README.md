@@ -40,13 +40,13 @@ The script can also automatically send an email of the top papers being added
   - [ ] **del_past** // if `true` deletes past list of papers before adding the new one.
 6. Run the **save_email** function.
 ---
-7. OPTIONAL: substitute the RegEx for keyword search and sheets names in the **labels** variables in `cleaning.gs` if you need to clean/organize your list.
-8.1 Run the **run_labels** function to move published papers in `Papers` to a new Sheet with the label name
-8.2 Run the **run_tag** function to add a column to `Preprints` with the label assigned to the manuscript
+7. OPTIONAL: substitute the RegEx for keyword search and sheets names in the **labels** variables in `cleaning.gs` if you need to clean/organize your list.  
+8.1 Run the **run_labels** function to move published papers in `Papers` to a new Sheet with the label name  
+8.2 Run the **run_tag** function to add a column to `Preprints` with the label assigned to the manuscript  
 
 ## The custom menu
 The `options.gs` script has a function that will add a custom menu with selected sassafras functions to your SpreadSheet to make it easier to run.  
-To make it work the script just need to be saved in your script editor, and refresh the page of your SpreadSheet.
+To make it work the script just needs to be saved in your script editor, and refresh the page of your SpreadSheet.
 ![Custom menu](img_/menu_GSalerts.png)
 
 ## How to run the script automatically every week
