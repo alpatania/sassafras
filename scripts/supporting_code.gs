@@ -2,6 +2,17 @@ var testin = false; // Debugging true for debugging
 // Modified version of the code from: https://gist.github.com/oshliaer/70e04a67f1f5fd96a708
 // To work with Google Scholar Alerts
 
+function getStatusCode_(url){
+  Logger.log(url);
+   var options = {
+     'muteHttpExceptions': true,
+     'followRedirects': false
+   };   
+   var url_trimmed = url.trim();   
+   var response = UrlFetchApp.fetch(url_trimmed, options);
+   return response.getResponseCode();
+}
+
 function getEmails_(q) {
     var emails = [];
     var threads = GmailApp.search(q);// Searches for unread messages with the google scholar label
@@ -36,7 +47,11 @@ function getEmails_(q) {
                   var scholar_url = line.replace('<','').replace('>','');
                   scholar_url = scholar_url.replace(/http:\/\/scholar\.google\.(com|it)\/scholar_url\?url=/g,'');
                   var url = scholar_url.split('&');
-                  paper.push(url[0]);
+                  if (getStatusCode_(url[0]) == 404) {
+                    paper.push("https://www.google.com/search?q="+title.replace(' ','+'));
+                    } else {
+                    paper.push(url[0]);
+                    }
                   break;
                 } else {
                   continue
