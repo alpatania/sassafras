@@ -59,11 +59,19 @@ function saveEmails(){
          if (paperold[2].match(/(bio|a)rxiv\.org|preprint/g)){ // and adds the previous title with its counter to the correct sheet
              paperold.push(countpaperold); // if the title is not present appends the counter to the previous title's data
              newPreprints.push(paperold); // preprints if the link is to ArXiv or Biorxiv
-         }
          } else {
              paperold.push(countpaperold); // if the title is not present appends the counter to the previous title's data
              newPapers.push(paperold); // papers otherwise
          }
+       } else {
+           var paperold = array2d[0];
+           paperold.push(1);
+           if (paperold[2].match(/(bio|a)rxiv\.org|preprint/g)){
+               newPreprints.push(paperold);
+           } else {
+               newPapers.push(paperold);
+           }
+       }
      } else {
        Logger.log('No new papers this week');
      }
