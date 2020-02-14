@@ -49,7 +49,7 @@ function getEmails_(q) {
                   scholar_url = scholar_url.replace(/http:\/\/scholar\.google\.(com|it)\/scholar_url\?url=/g,'');
                   var url = scholar_url.split('&');
                   if (getStatusCode_(url[0]) == 404) {
-                    paper.push("https://www.google.com/search?q="+title.replace(' ','+'));
+                    paper.push("https://www.google.com/search?q="+title.replace(/\s/g,'+'));
                     } else {
                     paper.push(url[0]);
                     }
