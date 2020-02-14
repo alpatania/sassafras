@@ -1,4 +1,5 @@
 var testin = false; // Debugging true for debugging
+var num_columns = 4;
 // Modified version of the code from: https://gist.github.com/oshliaer/70e04a67f1f5fd96a708
 // To work with Google Scholar Alerts
 
@@ -63,12 +64,12 @@ function getEmails_(q) {
                paper.push(subject);//after the title and author [Google Scholar Alert search query] is added to the paper info being saved
               }
               // HOTFIX
-              if (paper.length < 4) {
-                for (var fix = 0; fix < 4-paper.length; fix++) {
+              if (paper.length < num_columns) {
+                for (var fix = 0; fix < num_columns-paper.length; fix++) {
                   paper.push('something went wrong here')
                 }
                 } else {
-                paper = paper.slice(0,4)
+                paper = paper.slice(0,num_columns)
                 }
                // END HOTFIX
               emails.push(paper); // the paper is added to the list
@@ -88,9 +89,9 @@ function getEmails_(q) {
 
 function appendData_(sheet, array2d) {
  if (del_past) {
-  var firstRow = sheet.getRange(1, 1, 1, 5).getValues(); // Get values of first row to add later
+  var firstRow = sheet.getRange(1, 1, 1, num_columns+1).getValues(); // Get values of first row to add later
   sheet.clearContents(); // Clean spreadsheet
-  sheet.getRange(1, 1, 1, 5).setValues(firstRow);
+  sheet.getRange(1, 1, 1, num_columns+1).setValues(firstRow);
     }
  if (date_separator) { //Adding a line with today's time stamp before the new update
   var today = new Date();
