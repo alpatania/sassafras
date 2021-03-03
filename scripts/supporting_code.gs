@@ -7,12 +7,17 @@ function getStatusCode_(url){
   Logger.log(url);
    var options = {
      'muteHttpExceptions': true,
-     'followRedirects': false
+     'followRedirects': true,
+     'validateHttpsCertificates' : false
    };   
    var url_trimmed = url.trim();   
-   var response = UrlFetchApp.fetch(url_trimmed, options);
-   return response.getResponseCode();
-}
+  try {
+       var response = UrlFetchApp.fetch(url_trimmed, options);
+       return response.getResponseCode();
+  } catch(e) {
+    //Catch any error here. Example below is just sending an email with the error.
+    MailApp.sendEmail('emailAddress', 'Sample Script - Error', e);
+  }
 
 function getEmails_(q) {
     var emails = [];
