@@ -18,6 +18,7 @@ function getStatusCode_(url){
     //Catch any error here. Example below is just sending an email with the error.
     MailApp.sendEmail('emailAddress', 'Sample Script - Error', e);
   }
+}
 
 function getEmails_(q) {
     var emails = [];
